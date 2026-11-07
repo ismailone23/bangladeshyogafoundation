@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
+/* Tokens come from the logo: navy ink, leaf green, sun orange on white paper. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #ffffff;
+  --paper-2: #f3f5f7;
+  --ink: #12263f;
+  --ink-2: #4a5a6b;
+  --muted: #66717c;
+  --line: rgb(18 38 63 / 0.12);
+  --green: #2f6b2c;
+  --sun: #f29a1b;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-green: var(--green);
+  --color-sun: var(--sun);
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-serif: var(--font-display), var(--font-body), serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+/* Bangla needs more line height than Latin. :lang() also covers the admin preview, which sets lang on a wrapper. */
+:lang(bn), body:lang(bn) { line-height: 1.8; }
+:lang(bn) h1 { line-height: 1.3; }
+:lang(bn) h2, :lang(bn) h3 { line-height: 1.4; }
+
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+/* Content is visible by default. GSAP only hides things that start below the fold (see useReveal),
+   so if scripts fail nothing is lost. The hero text starts hidden for its entrance, with a CSS failsafe. */
+@keyframes failsafe { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  [data-hero-word], [data-hero-fade] { opacity: 0; animation: failsafe 0s 2.5s forwards; }
 }
