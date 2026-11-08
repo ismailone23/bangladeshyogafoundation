@@ -31,9 +31,15 @@ export function Header() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    // scroll restoration / bfcache can land after mount without a scroll event we caught
+    const evs = ["scroll", "scrollend", "pageshow", "load"] as const;
+    evs.forEach((e) => window.addEventListener(e, onScroll, { passive: true }));
+    const raf = requestAnimationFrame(onScroll);
+    return () => {
+      evs.forEach((e) => window.removeEventListener(e, onScroll));
+      cancelAnimationFrame(raf);
+    };
+  }, [path]);
 
   const links = pageLinks(t);
   // over the hero photo the bar is transparent; everywhere else it is solid
