@@ -78,17 +78,21 @@ export function AboutSection() {
                 data-reveal
                 className="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6"
               >
-                <dt className="font-serif text-2xl"><Ed k={`about.pillars.${i}.t`} text={p.t} /></dt>
-                <dd className="text-ink-2"><Ed k={`about.pillars.${i}.d`} text={p.d} /></dd>
+                <dt className="font-serif text-2xl">
+                  <Ed k={`about.pillars.${i}.t`} text={p.t} />
+                </dt>
+                <dd className="text-ink-2">
+                  <Ed k={`about.pillars.${i}.d`} text={p.d} />
+                </dd>
               </div>
             ))}
           </dl>
         </div>
         <div
           data-reveal
-          className="relative aspect-[4/5] overflow-hidden rounded-2xl md:col-span-5"
+          className="relative aspect-4/5 overflow-hidden rounded-2xl md:col-span-5"
         >
-          <div data-parallax className="absolute inset-x-0 -top-[6%] h-[112%]">
+          <div data-parallax className="absolute inset-x-0 top-[-6%] h-[112%]">
             <Photo
               src={site.images.about}
               alt=""
@@ -120,12 +124,12 @@ export function CoursesSection() {
               data-reveal
               className={`group/card flex flex-col ${i === 1 ? "md:mt-16" : ""}`}
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
                 <Photo
                   src={c.image}
                   alt=""
                   sizes="(min-width:768px) 33vw, 100vw"
-                  className="transition-transform duration-700 ease-[var(--ease)] group-hover/card:scale-[1.04]"
+                  className="transition-transform duration-700 ease-(--ease) group-hover/card:scale-[1.04]"
                 />
               </div>
               <p className="mt-5 text-sm text-muted">

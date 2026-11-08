@@ -40,3 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 provided_assests
+# owner instructions document
+/docs/
