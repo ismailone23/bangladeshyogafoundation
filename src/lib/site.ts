@@ -36,6 +36,7 @@ export type SiteContent = {
 
 const COURSE_IMAGES = ["/img/park.jpg", "/img/forest.jpg", "/img/med.jpg"];
 const GALLERY: [string, number, number][] = [
+  ["/img/sound-yoga.png", 1080, 1350],
   ["/img/hero.jpg", 2000, 1125],
   ["/img/park.jpg", 2000, 1125],
   ["/img/shore.jpg", 2000, 1333],

@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useLang } from "./lang";
 import { Ed } from "./edit";
-import { AboutSection, CoursesSection, HeroSection } from "./sections";
+import { AboutSection, CoursesSection, EventSection, HeroSection } from "./sections";
 import { Accordion, Label, Photo, Tabs, btn, useReveal, wrap } from "./parts";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -71,6 +71,8 @@ export default function Site() {
     <div ref={root}>
       <main>
         <HeroSection />
+
+        <EventSection />
 
         <AboutSection />
 

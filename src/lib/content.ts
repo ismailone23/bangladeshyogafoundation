@@ -194,6 +194,7 @@ const en = {
     intro: "Moments from our sessions",
     close: "Close",
     captions: [
+      "Dhyan o Dhwoni (Sound Yoga) workshop, Thu 12 Nov, 11am–1pm, Southeast University campus",
       "Open-air practice at sunrise",
       "Downward dog in the park",
       "Standing together by the sea",
@@ -218,6 +219,17 @@ const en = {
     whereBody:
       "City parks and a community hall in Dhaka, and live online classes for anyone in Bangladesh.",
     msg: "Hello, I would like to join:",
+  },
+  event: {
+    label: "Upcoming · By invitation",
+    title: "Invited by Southeast University",
+    body: "At the invitation of the Southeast University authority, our founder Kazi Mahtab Shuman will lead a special training session for students and faculty: Dhyan o Dhwoni, meditation through sound.",
+    facts: [
+      { t: "Date", d: "Thursday, 12 November" },
+      { t: "Time", d: "11:00 am – 1:00 pm" },
+      { t: "Venue", d: "Southeast University campus" },
+    ],
+    alt: "Poster for Dhyan o Dhwoni (Sound Yoga) at Southeast University",
   },
   founder: {
     label: "Founder",
@@ -486,6 +498,7 @@ const bn: typeof en = {
     intro: "আমাদের সেশনের কিছু মুহূর্ত",
     close: "বন্ধ করুন",
     captions: [
+      "ধ্যান ও ধ্বনি (সাউন্ড যোগ) কর্মশালা, বৃহস্পতিবার ১২ নভেম্বর, সকাল ১১টা–দুপুর ১টা, সাউথইস্ট ইউনিভার্সিটি ক্যাম্পাস",
       "সূর্যোদয়ে খোলা আকাশের অনুশীলন",
       "পার্কে অধোমুখ আসন",
       "সমুদ্রের ধারে একসঙ্গে",
@@ -510,6 +523,17 @@ const bn: typeof en = {
     whereBody:
       "ঢাকার পার্ক ও একটি কমিউনিটি হল, আর বাংলাদেশের যে কারও জন্য অনলাইন লাইভ ক্লাস।",
     msg: "আমি যোগ দিতে চাই:",
+  },
+  event: {
+    label: "আসন্ন · আমন্ত্রণে",
+    title: "সাউথইস্ট ইউনিভার্সিটির আমন্ত্রণে",
+    body: "সাউথইস্ট ইউনিভার্সিটি কর্তৃপক্ষের আমন্ত্রণে আমাদের প্রতিষ্ঠাতা কাজী মাহতাব সুমন শিক্ষার্থী ও শিক্ষকদের জন্য একটি বিশেষ প্রশিক্ষণ পরিচালনা করবেন: ধ্যান ও ধ্বনি (সাউন্ড যোগ)।",
+    facts: [
+      { t: "তারিখ", d: "বৃহস্পতিবার, ১২ নভেম্বর" },
+      { t: "সময়", d: "সকাল ১১টা – দুপুর ১টা" },
+      { t: "স্থান", d: "সাউথইস্ট ইউনিভার্সিটি ক্যাম্পাস" },
+    ],
+    alt: "সাউথইস্ট ইউনিভার্সিটিতে ধ্যান ও ধ্বনি (সাউন্ড যোগ) কর্মশালার পোস্টার",
   },
   founder: {
     label: "প্রতিষ্ঠাতা",

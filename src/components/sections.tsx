@@ -155,3 +155,38 @@ export function CoursesSection() {
     </section>
   );
 }
+
+// shortcut: hard-coded one-off event (12 Nov), delete this section and content.event after it
+export function EventSection() {
+  const { t } = useLang();
+  return (
+    <section id="event" className="bg-paper-2 py-24 md:py-32">
+      <div className={`${wrap} grid items-center gap-12 md:grid-cols-12 md:gap-16`}>
+        <div className="md:col-span-7">
+          <Label k="event.label">{t.event.label}</Label>
+          <h2 data-reveal className="text-4xl leading-[1.1] md:text-5xl">
+            <Ed k="event.title" text={t.event.title} />
+          </h2>
+          <p data-reveal className="mt-6 max-w-xl text-ink-2">
+            <Ed k="event.body" text={t.event.body} />
+          </p>
+          <dl className="mt-12 divide-y divide-line border-y border-line">
+            {t.event.facts.map((f, i) => (
+              <div key={i} data-reveal className="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                <dt className="font-serif text-2xl">
+                  <Ed k={`event.facts.${i}.t`} text={f.t} />
+                </dt>
+                <dd className="text-ink-2">
+                  <Ed k={`event.facts.${i}.d`} text={f.d} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div data-reveal className="relative aspect-4/5 overflow-hidden rounded-2xl md:col-span-5">
+          <Photo src="/img/sound-yoga.png" alt={t.event.alt} sizes="(min-width:768px) 40vw, 100vw" />
+        </div>
+      </div>
+    </section>
+  );
+}
